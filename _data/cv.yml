@@ -2,96 +2,79 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Kaustubh Ponkshe
+    - name: Email
+      value: kaustubhponkshe@iitb.ac.in
     - name: Date of Birth
-      value: 14th March 1879
+      value: 1st January 1999
     - name: Languages
-      value: English, German
+      value: English, Hindi, Marathi
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Dual Degree: Electrical Engineering and AI
+      institution: Indian Institute of Technology Bombay, India
+      year: 2019 - 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - Ranked 3rd in AI & Data Science Programme.
+        - Awarded Undergraduate Research Award for Bachelor’s Thesis.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Research Assistant
+      institution: Mohamed bin Zayed University of AI, Abu Dhabi
+      year: 2024 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Developing federated learning models with privacy-preserving mechanisms.
+        - Extending low-rank fine-tuning methods for heterogeneous environments.
+    - title: Research Intern
+      institution: MIT Media Lab, Cambridge, MA, USA
+      year: Summer 2023
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Collaborated on parameter-efficient AI techniques for foundational models.
+        - Proposed adaptive aggregation strategies for LoRA methods.
+    - title: Undergraduate Research Assistant
+      institution: IIT Bombay, Mumbai, India
+      year: 2021 - 2023
       description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Designed StructFormer for document structure-aware language modeling.
+        - Published results in journals under review.
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://github.com/RaghavSinghal10/lora-sb">LoRA-SB</a>
+      year: 2024
+      description: Efficient low-rank fine-tuning with parameter savings up to 90x.
+    - title: <a href="https://github.com/Kaustubh-iitb/Power-Mechanism-new">Power Learning</a>
+      year: 2024
+      description: Privacy-preserving embeddings for collaborative learning.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2023
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Undergraduate Research Award (URA 02), IIT Bombay
+    - year: 2024
       items:
-        - Max Planck Medal
+        - Finalist, PRISM AI Research Competition
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Trustworthy Machine Learning
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Privacy-preserving AI.
+        - Scalable federated learning.
+    - title: Efficient AI Systems
       items:
-        - Description 1.
-        - Description 2.
+        - Low-rank fine-tuning methods.
+        - Resource-efficient foundation model deployment.
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Reading about physics, Exploring AI ethics, Running.
