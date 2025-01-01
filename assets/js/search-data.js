@@ -415,7 +415,10 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-attending-neurips-2024-to-preswnt-our-work-on-federated-lora",
+            },},{id: "news-our-latest-work-lora-silver-bullet-is-out-on-arxiv",
+          title: 'Our latest work LoRA-Silver Bullet is out on arxiv 😄',
+          description: "",
+          section: "News",},{id: "news-attending-neurips-2024-to-preswnt-our-work-on-federated-lora",
           title: 'Attending NeurIPS 2024 to preswnt our work on Federated LoRA',
           description: "",
           section: "News",},{id: "news-structformer-got-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
