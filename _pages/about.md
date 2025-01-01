@@ -27,10 +27,11 @@ My research focuses on addressing challenges in fine-tuning, federated learning,
 - **Power Learning**: Developed a privacy-preserving framework for collaborative learning with formal differential privacy guarantees.
 - **StructFormer**: Proposed a novel structure-aware language model for document comprehension.
 
-Feel free to explore my [publications](/publications/) and [projects](/projects/) or connect with me on [LinkedIn](#).
+Feel free to explore my [publications](/publications/) and [projects](/projects/).
 
 ## Affiliations
 - Researcher at Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi
-- Collaborative projects with MIT Media Lab and Adobe Research
+- Former Research Intern at MIT Media Lab
+- Former Graduate Student at IIT Bombay
 
 Thank you for visiting my page!
