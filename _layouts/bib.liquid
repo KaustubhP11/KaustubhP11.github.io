@@ -1,5 +1,20 @@
 ---
 ---
+<div class="publication">
+  {% if entry.preview %}
+    <img src="{{ entry.preview }}" alt="{{ entry.title }}" style="width: 150px; float: left; margin-right: 20px;">
+  {% endif %}
+  <div>
+    <strong>{{ entry.title }}</strong><br>
+    <i>{{ entry.author }}</i><br>
+    {% if entry.note %}
+      <span>{{ entry.note }}</span><br>
+    {% endif %}
+    <a href="{{ entry.url }}">[Paper]</a> | <a href="{{ entry.pdf }}">[PDF]</a> | <a href="{{ entry.code }}">[Code]</a>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
