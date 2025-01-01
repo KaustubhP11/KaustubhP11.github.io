@@ -410,12 +410,7 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-our-latest-work-lora-silver-bullet-is-out-on-arxiv",
+    },{id: "news-our-latest-work-lora-silver-bullet-is-out-on-arxiv",
           title: 'Our latest work LoRA-Silver Bullet is out on arxiv 😄',
           description: "",
           section: "News",},{id: "news-attending-neurips-2024-to-preswnt-our-work-on-federated-lora",
