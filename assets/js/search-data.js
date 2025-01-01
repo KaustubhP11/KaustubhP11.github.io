@@ -410,15 +410,15 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+    },{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-structformer-got-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
+            },},{id: "news-attending-neurips-2024-to-preswnt-our-work-on-federated-lora",
+          title: 'Attending NeurIPS 2024 to preswnt our work on Federated LoRA',
+          description: "",
+          section: "News",},{id: "news-structformer-got-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
           title: 'StructFormer got accepted at the AAAI Workshop on Document Intelligence! :sparkles:',
           description: "",
           section: "News",},{id: "projects-project-1",
