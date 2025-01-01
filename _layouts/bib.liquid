@@ -28,18 +28,11 @@
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+          <!-- Handles absolute paths for external images -->
+          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}" alt="Publication Preview" style="max-width: 100%; height: auto;">
         {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          {%
-            include figure.liquid
-            loading="eager"
-            path=entry_path
-            sizes = "200px"
-            class="preview z-depth-1 rounded"
-            zoomable=true
-            alt=entry.preview
-          %}
+          <!-- Handles relative paths for internal images -->
+          <img class="preview z-depth-1 rounded" src="{{ entry.preview | prepend: '/assets/images/' }}" alt="Publication Preview" style="max-width: 100%; height: auto;">
         {% endif %}
       {% endif %}
     </div>
