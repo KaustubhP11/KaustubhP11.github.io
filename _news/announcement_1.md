@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Attending NeurIPS 2024 to preswnt our work on Federated LoRA 
+Attending NeurIPS 2024 to present our work on Federated LoRA 
