@@ -6,7 +6,7 @@ subtitle: Researcher | AI Enthusiast | IIT Bombay Alumnus
 
 profile:
   align: right
-  image: Kaustubh_headshot.jpg
+  image: assets/img/Kaustubh_headshot.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Mohamed bin Zayed University of Artificial Intelligence</p>
