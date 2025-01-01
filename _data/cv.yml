@@ -35,12 +35,6 @@
       description:
         - Collaborated on parameter-efficient AI techniques for foundational models.
         - Proposed adaptive aggregation strategies for LoRA methods.
-    - title: Undergraduate Research Assistant
-      institution: IIT Bombay, Mumbai, India
-      year: 2021 - 2023
-      description:
-        - Designed StructFormer for document structure-aware language modeling.
-        - Published results in journals under review.
 
 - title: Open Source Projects
   type: time_table
@@ -48,9 +42,6 @@
     - title: <a href="https://github.com/RaghavSinghal10/lora-sb">LoRA-SB</a>
       year: 2024
       description: Efficient low-rank fine-tuning with parameter savings up to 90x.
-    - title: <a href="https://github.com/Kaustubh-iitb/Power-Mechanism-new">Power Learning</a>
-      year: 2024
-      description: Privacy-preserving embeddings for collaborative learning.
 
 - title: Honors and Awards
   type: time_table
