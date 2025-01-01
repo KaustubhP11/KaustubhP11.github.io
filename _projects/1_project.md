@@ -2,7 +2,7 @@
 layout: page
 title: project 1
 description: with background image
-img: assets/img/lora_sb_thmbnail.png
+img: assets/img/lora_sb_thumbnail.png
 importance: 1
 category: work
 related_publications: true
