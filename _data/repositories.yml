@@ -1,14 +1,13 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - KaustubhP11
+  - Kaustubh-iitb
+
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - RaghavSinghal10/lora-sb
+  - RaghavSinghal10/fedex-lora
+  - Kaustubh-iitb/Power-Mechanism-new
+  - KaustubhP11/StructFormer
+
