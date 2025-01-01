@@ -1,0 +1,39 @@
+publications:
+  - title: "Initialization Using Update Approximation for Low-Rank Fine-Tuning"
+    authors: Kaustubh Ponkshe*, Raghav Singhal*, Eduard Gorbunov, Alexey Tumanov, Samuel Horvath, Praneeth Vepakomma
+    conference: "Under Review @ ICML 2025"
+    year: 2025
+    link: "https://raghavsinghal10.github.io/lora-sb-page/"
+    code: "https://github.com/RaghavSinghal10/lora-sb"
+    pdf: "https://raghavsinghal10.github.io/lora-sb-redirect/"
+
+  - title: "Power Learning: Privacy-preserving Embeddings"
+    authors: Kaustubh Ponkshe, Praneeth Vepakomma, Peter Kairoz
+    conference: "Trustworthy ML Workshop @ CIKM 2024"
+    year: 2024
+    link: "https://kaustubhp11.github.io/Power-page-redirect/"
+    code: "https://github.com/Kaustubh-iitb/Power-Mechanism-new"
+    pdf: "https://kaustubhp11.github.io/Power-Learn-redirect/"
+
+  - title: "StructFormer: Document Structure-Based Pre-training"
+    authors: Kaustubh Ponkshe, Venkatapathy Subramanian, Ganesh Ramakrishnan, Natwar Modani
+    conference: "Under Review @ TMLR"
+    year: 2024
+    link: "https://github.com/KaustubhP11/StructFormer"
+    code: "https://github.com/KaustubhP11/StructFormer"
+    pdf: "https://arxiv.org/abs/2411.16618"
+
+  - title: "GUIDEQ: Framework for Guided Questioning"
+    authors: Priya Mishra*, Suraj Racha*, Kaustubh Ponkshe, Adit Akarsh, Ganesh Ramakrishnan
+    conference: "Under Review @ ACL Rolling Review"
+    year: 2024
+    link: "https://arxiv.org/abs/2411.05991"
+    code: "https://github.com/SDRMp/DRPG"
+    pdf: "https://arxiv.org/abs/2411.05991"
+
+  - title: "Crop Yield Prediction of Indian Districts Using Deep Learning"
+    authors: Parjanya Prashant, Kaustubh Ponkshe, Chirag Garg, Ishan Pendse, Prathamesh Muley
+    conference: "ICIIP 2021"
+    year: 2021
+    link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9702573"
+    code: "https://github.com/parjanya20/CropYieldPrediction"
