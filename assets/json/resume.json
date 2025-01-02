@@ -1,12 +1,11 @@
 {
   "basics": {
     "name": "Kaustubh Ponkshe",
-    "label": "Researcher",
-    "image": "",
+    "label": "AI Researcher",
     "email": "kaustubhponkshe@iitb.ac.in",
-    "phone": "+91 9123456789",
+    "phone": "+91 7888066398",
     "url": "https://github.com/KaustubhP11",
-    "summary": "A dedicated researcher with expertise in scalable, efficient, and trustworthy AI systems.",
+    "summary": "A dedicated researcher specializing in federated learning, privacy-preserving AI, and efficient model fine-tuning, with experience at prestigious institutions including MIT Media Lab and MBZUAI.",
     "location": {
       "address": "Mumbai",
       "postalCode": "400076",
@@ -27,143 +26,178 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "Mohamed bin Zayed University of AI",
-      "position": "Research Assistant",
-      "url": "https://mbzuai.ac.ae/",
-      "startDate": "2024-01-01",
-      "summary": "Focusing on federated learning and privacy-preserving AI systems.",
-      "highlights": [
-        "Developed scalable federated learning frameworks.",
-        "Optimized low-rank fine-tuning methods for heterogeneous environments."
-      ]
-    },
-    {
-      "name": "MIT Media Lab",
-      "position": "Research Intern",
-      "url": "https://www.media.mit.edu/",
-      "startDate": "2023-05-01",
-      "endDate": "2023-08-01",
-      "summary": "Collaborated on parameter-efficient methods for large foundational models.",
-      "highlights": [
-        "Proposed adaptive aggregation strategies for LoRA methods.",
-        "Published findings on efficient model fine-tuning."
-      ]
-    }
-  ],
   "education": [
     {
       "institution": "Indian Institute of Technology Bombay",
       "location": "Mumbai, India",
       "url": "https://www.iitb.ac.in/",
-      "area": "Electrical Engineering and AI",
-      "studyType": "Dual Degree (B.Tech + M.Tech)",
-      "startDate": "2019-07-01",
+      "area": "Electrical Engineering and Artificial Intelligence",
+      "studyType": "Interdisciplinary Dual Degree",
+      "startDate": "2019-08-01",
+      "endDate": "2024-07-01",
+      "score": "9.57/10",
+      "highlights": [
+        "Ranked third among the entire batch in the Artificial Intelligence and Data Science Programme",
+        "Completed a minor degree in Computer Science & Engineering",
+        "Secured perfect grade (AA) in every course from Mathematics & Statistics Department"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Mohamed bin Zayed University of Artificial Intelligence",
+      "position": "Researcher",
+      "location": "Abu Dhabi",
+      "url": "https://mbzuai.ac.ae/",
+      "startDate": "2024-11-01",
+      "endDate": "Present",
+      "summary": "Working on LoRA-SB and FedEx-LoRA projects under Prof. Praneeth Vepakomma",
+      "highlights": [
+        "Developed novel initialization strategy for low-rank adaptation",
+        "Achieved 90x parameter reduction while matching performance",
+        "Formulated systematic error residual assignment for federated LoRA"
+      ]
+    },
+    {
+      "name": "MIT Media Lab, Camera Culture Group",
+      "position": "Research Intern",
+      "location": "Boston, MA",
+      "url": "https://www.media.mit.edu/",
+      "startDate": "2023-05-01",
       "endDate": "2024-05-01",
-      "score": "9.8/10",
-      "courses": ["Artificial Intelligence", "Machine Learning", "Federated Learning"]
+      "summary": "Worked on Power-Learning project focusing on differentially private embeddings",
+      "highlights": [
+        "Established theoretical conditions for private data distribution",
+        "Achieved 5% improvement over DP-SGD while maintaining privacy guarantees",
+        "Developed joint learning framework for privacy-utility optimization"
+      ]
+    },
+    {
+      "name": "AWL Inc. Japan",
+      "position": "AI Research Intern",
+      "location": "Japan",
+      "startDate": "2022-05-01",
+      "endDate": "2022-07-01",
+      "summary": "Worked on Core-AI-Engine optimizations",
+      "highlights": [
+        "Implemented parallel processing for face detection and classification",
+        "Developed three graph-based optimization algorithms"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Initialization using Update Approximation for Extremely Efficient Low-Rank Fine-tuning",
+      "publisher": "Under Review @ ICML 2025",
+      "authors": ["Kaustubh Ponkshe*", "Raghav Singhal", "Eduard Gorbunov", "Alexey Tumanov", "Samuel Horvath", "Praneeth Vepakomma"],
+      "releaseDate": "2024-11-01"
+    },
+    {
+      "name": "Power Learning: Differentially private embeddings for collaborative learning",
+      "publisher": "Trustworthy ML Workshop @ CIKM 2024",
+      "authors": ["Kaustubh Ponkshe", "Praneeth Vepakomma", "Peter Kairouz"],
+      "releaseDate": "2024-04-01"
+    },
+    {
+      "name": "FedEx-LoRA: Exact Aggregation for Federated Fine-Tuning of Foundation Models",
+      "publisher": "FITML Workshop @ NeurIPS 2024",
+      "authors": ["Raghav Singhal*", "Kaustubh Ponkshe*", "Praneeth Vepakomma"],
+      "releaseDate": "2024-06-01"
+    },
+    {
+      "name": "StructFormer: Document Structure-based Masked Attention",
+      "publisher": "Under Review @ TMLR",
+      "authors": ["Kaustubh Ponkshe", "Venkatapathy Subramanian", "Ganesh Ramakrishnan", "Natwar Modani"],
+      "releaseDate": "2024-03-01"
     }
   ],
   "awards": [
     {
       "title": "Undergraduate Research Award (URA 02)",
-      "date": "2023-12-01",
+      "date": "2024-05-01",
       "awarder": "IIT Bombay",
-      "summary": "Awarded for exceptional research contributions to trustworthy AI systems."
+      "summary": "Awarded for one of the best bachelor's thesis in the entire batch"
     },
     {
-      "title": "Finalist, PRISM AI Research Competition",
-      "date": "2024-04-01",
-      "awarder": "PRISM AI",
-      "summary": "Recognized for innovative contributions to federated and privacy-preserving learning."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Deep Learning Specialization",
-      "date": "2023-01-01",
-      "issuer": "Coursera (Andrew Ng)",
-      "url": "https://coursera.org",
-      "icon": "fa-solid fa-graduation-cap"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Initialization Using Update Approximation for Low-Rank Fine-Tuning",
-      "publisher": "Under Review @ ICML 2025",
-      "releaseDate": "2025-01-01",
-      "url": "https://raghavsinghal10.github.io/lora-sb-page/",
-      "summary": "A novel approach to efficient low-rank fine-tuning methods with reduced computational overhead."
-    },
-    {
-      "name": "Power Learning: Privacy-preserving Embeddings",
-      "publisher": "Trustworthy ML Workshop @ CIKM 2024",
-      "releaseDate": "2024-04-01",
-      "url": "https://kaustubhp11.github.io/Power-page-redirect/",
-      "summary": "Introduced privacy-preserving embeddings for federated learning."
-    },
-    {
-      "name": "StructFormer: Document Structure-Based Pre-training",
-      "publisher": "Under Review @ TMLR",
-      "releaseDate": "2024-03-01",
-      "url": "https://github.com/KaustubhP11/StructFormer",
-      "summary": "Proposed a structure-aware pre-training model for document understanding."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Machine Learning",
-      "level": "Advanced",
-      "icon": "fa-solid fa-brain",
-      "keywords": ["Federated Learning", "Privacy-Preserving AI", "Model Fine-Tuning"]
-    },
-    {
-      "name": "Programming",
-      "level": "Advanced",
-      "icon": "fa-solid fa-code",
-      "keywords": ["Python", "TensorFlow", "PyTorch", "Scikit-Learn"]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
-    },
-    {
-      "language": "Hindi",
-      "fluency": "Native Speaker",
-      "icon": ""
-    },
-    {
-      "language": "Marathi",
-      "fluency": "Native Speaker",
-      "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Trustworthy AI",
-      "icon": "fa-solid fa-shield-alt",
-      "keywords": ["Federated Learning", "Scalable AI", "Privacy-Preserving Systems"]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Kaustubh demonstrated exceptional research skills during his tenure as an undergraduate researcher."
+      "title": "Indian National Math Olympiad",
+      "date": "2019-01-01",
+      "awarder": "HBCSE",
+      "summary": "Secured State Rank 3"
     }
   ],
   "projects": [
     {
       "name": "LoRA-SB",
-      "summary": "Efficient low-rank fine-tuning for foundational models.",
-      "highlights": ["Achieved 90x parameter savings.", "Published findings under review @ ICML."],
-      "startDate": "2024-01-01",
-      "endDate": "2024-05-01",
-      "url": "https://github.com/RaghavSinghal10/lora-sb"
+      "description": "Novel initialization strategy for efficient low-rank adaptation",
+      "highlights": [
+        "90x parameter reduction while maintaining performance",
+        "Theoretical guarantees for gradient optimization",
+        "Applied to models up to 9B parameters"
+      ],
+      "startDate": "2024-11-01",
+      "endDate": "Present"
+    },
+    {
+      "name": "GUIDEQ",
+      "description": "Framework for guided questioning using LLMs and XAI",
+      "highlights": [
+        "Novel occlusion-based method for keyword identification",
+        "Improved F1-scores through enhanced information collection",
+        "Applied to healthcare and legal domains"
+      ],
+      "startDate": "2023-07-01",
+      "endDate": "2024-07-01"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "IIT Bombay Racing",
+      "position": "Design Engineer",
+      "startDate": "2022-07-01",
+      "endDate": "2023-05-01",
+      "highlights": [
+        "Designed autonomous controller for FSSIM simulation",
+        "Won Software Intelligence competition by Ather Energy",
+        "Implemented dynamic control systems"
+      ]
+    },
+    {
+      "organization": "Institute Sports Council",
+      "position": "Sports Convener",
+      "startDate": "2020-06-01",
+      "endDate": "2021-05-01",
+      "highlights": [
+        "Organized Blackcat Championship for varsity teams",
+        "Executed Virtual Run with 1500+ participants"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Machine Learning",
+      "keywords": ["Federated Learning", "Privacy-Preserving AI", "Model Fine-Tuning", "Deep Learning"]
+    },
+    {
+      "name": "Programming",
+      "keywords": ["Python", "TensorFlow", "PyTorch", "Simulink"]
+    },
+    {
+      "name": "Mathematics",
+      "keywords": ["Optimization", "Linear Algebra", "Statistics", "Calculus"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Native"
+    },
+    {
+      "language": "Marathi",
+      "fluency": "Native"
     }
   ]
 }
