@@ -412,29 +412,29 @@ ninja.data = [{
           section: "News",},{id: "news-structformer-got-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
           title: 'StructFormer got accepted at the AAAI Workshop on Document Intelligence! :sparkles:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-lora-sb",
+          title: 'LoRA-SB',
+          description: "Initialization Using Update Approximation for Low-Rank Fine-Tuning",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-fedex-lora",
+          title: 'FedEx-LoRA',
+          description: "Exact Aggregation for Federated and Efficient Fine-Tuning of Foundation Models",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-power-learning",
+          title: 'Power-Learning',
+          description: "Privacy-preserving Embeddings",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-structformer",
+          title: 'StructFormer',
+          description: "Document Structure-Based Pre-training",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-guideq",
+          title: 'GuideQ',
+          description: "Framework for Guided Questioning in Information Collection",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-project-6",
