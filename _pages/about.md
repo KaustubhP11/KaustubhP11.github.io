@@ -20,12 +20,12 @@ social: true # includes social icons at the bottom of the page
 
 ## About Me
 
-I am Kaustubh Ponkshe, a researcher passionate about democratizing AI through trustworthy, efficient, and scalable machine learning systems. I hold a dual degree in Electrical Engineering and Artificial Intelligence from IIT Bombay, where I was awarded the Undergraduate Research Award for one of the best bachelor’s theses.
+I am Kaustubh Ponkshe, a researcher passionate about democratizing AI through trustworthy, efficient, and scalable machine learning systems. I hold a Bachelor's degree in Electrical Engineering and a Master's degree in Artificial Intelligence from IIT Bombay, where I was awarded the Undergraduate Research Award for one of the best bachelor’s theses. I am currently working as a researcher with [Prof. Praneeth Vepakomma](https://sites.mit.edu/praneeth/), as a part of the [CERT-Lab](https://github.com/CERT-Lab) at MBZUAI.
 
 My research focuses on addressing challenges in fine-tuning, federated learning, and privacy-preserving AI. Some of my notable projects include:
-- **LoRA-SB**: Achieved up to 90x parameter efficiency while maintaining competitive performance in fine-tuning.
-- **Power Learning**: Developed a privacy-preserving framework for collaborative learning with formal differential privacy guarantees.
-- **StructFormer**: Proposed a novel structure-aware language model for document comprehension.
+- [**LoRA-SB**](https://raghavsinghal10.github.io/lora-sb-page/): Achieved up to 90x parameter efficiency while maintaining competitive performance in fine-tuning.
+- [**Power-Learning**](https://kaustubhp11.github.io/power-learn-page//): Developed a privacy-preserving framework for collaborative learning with formal differential privacy guarantees.
+- [**StructFormer**](/projects/4_project/): Proposed a novel structure-aware language model for document comprehension.
 
 Feel free to explore my [publications](/publications/) and [projects](/projects/).
 
