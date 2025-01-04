@@ -437,9 +437,9 @@ ninja.data = [{
           description: "Framework for Guided Questioning in Information Collection",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-memorization-in-llms",
+          title: 'Memorization in LLMs',
+          description: "A review of recent methods",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
             },},{id: "projects-project-7",
@@ -472,11 +472,11 @@ ninja.data = [{
           window.open("https://github.com/KaustubhP11", "_blank");
         },
       },{
-        id: 'social-rss',
-        title: 'RSS Feed',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("https://www.linkedin.com/in/kaustubh-ponkshe-6213a1195/", "_blank");
         },
       },{
         id: 'social-scholar',
