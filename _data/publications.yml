@@ -17,7 +17,7 @@ publications:
 
   - title: "StructFormer: Document Structure-Based Pre-training"
     authors: Kaustubh Ponkshe, Venkatapathy Subramanian, Ganesh Ramakrishnan, Natwar Modani
-    conference: "Under Review @ TMLR"
+    conference: "Poster, DocUI @ AAAI 2025"
     year: 2024
     link: "https://github.com/KaustubhP11/StructFormer"
     code: "https://github.com/KaustubhP11/StructFormer"
