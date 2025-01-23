@@ -409,8 +409,11 @@ ninja.data = [{
           section: "News",},{id: "news-attending-neurips-2024-to-present-our-work-on-federated-lora",
           title: 'Attending NeurIPS 2024 to present our work on Federated LoRA',
           description: "",
-          section: "News",},{id: "news-structformer-got-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
-          title: 'StructFormer got accepted at the AAAI Workshop on Document Intelligence! :sparkles:',
+          section: "News",},{id: "news-structformer-accepted-at-the-aaai-workshop-on-document-intelligence-sparkles",
+          title: 'StructFormer accepted at the AAAI Workshop on Document Intelligence! :sparkles:',
+          description: "",
+          section: "News",},{id: "news-guideq-accepted-at-naacl-findings-sparkles",
+          title: 'GuideQ accepted at NAACL Findings :sparkles:',
           description: "",
           section: "News",},{id: "projects-lora-sb",
           title: 'LoRA-SB',
@@ -442,9 +445,9 @@ ninja.data = [{
           description: "A review of recent methods",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-weight-shared-networks",
+          title: 'Weight-Shared Networks',
+          description: "A study of methods enabling scalable and dynamic neural networks for diverse deployment.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
             },},{id: "projects-project-8",
