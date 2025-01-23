@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**StructFormer** got accepted at the AAAI Workshop on Document Intelligence! :sparkles: 
+**StructFormer** accepted at the AAAI Workshop on Document Intelligence! :sparkles: 

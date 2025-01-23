@@ -1,81 +1,88 @@
 ---
 layout: page
-title: project 7
-description: with background image
-img: assets/img/4.jpg
-importance: 1
-category: work
-related_publications: true
+title:  Weight-Shared Networks
+description: A study of methods enabling scalable and dynamic neural networks for diverse deployment.
+img: assets/img/Eff_inf.jpg
+importance: 7
+category: Ongoing
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## What Are Weight-Shared Networks?
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Weight-shared networks allow a single model to dynamically support multiple configurations (e.g., varying depths, widths, and layers) for diverse deployment scenarios. By leveraging shared parameters, these networks enable scalable and efficient inference without requiring repeated retraining for different resource or performance constraints.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This approach is particularly impactful for deploying large models like GPT, LLaMA, or FLEXTRON on resource-constrained devices, such as mobile phones or edge hardware.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## How Do Weight-Shared Networks Work?
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+Weight-shared networks train a "supermodel" capable of generating sub-networks tailored to specific hardware or application needs. These sub-networks are derived using:
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+- **Subnet Selection Strategies:** Dynamic programming for layer selection and importance-based pruning for neuron selection.
+- **Elastic Architectures:** Adapt depth, width, and resolution to achieve optimal performance within given constraints.
+- **Dynamic Runtime Inference:** Select sub-networks at runtime based on hardware or input requirements.
 
-{% raw %}
+These methods ensure high adaptability and efficiency, enabling instant deployment of models optimized for accuracy and latency.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+---
 
-{% endraw %}
+## Key Techniques
+
+### 1. **AmoebaLLM: Knowledge-Preserving Subnet Selection**
+- Uses **dynamic programming** to identify critical layers while maintaining the knowledge of pre-trained LLMs.
+- Employs **importance-driven metrics** for structured neuron pruning, preserving key features for inference.
+
+### 2. **Once-for-All (OFA): Progressive Shrinking**
+- Trains the largest configuration first and progressively fine-tunes smaller sub-networks.
+- Supports dynamic adaptation of depth, width, and resolution during inference.
+
+### 3. **FLEXTRON: Elastic and Input-Adaptive Routing**
+- Introduces **elastic MLPs** and multi-head attention layers to dynamically scale resources based on input complexity.
+- Employs a surrogate model for stable routing decisions, ensuring efficient and accurate sub-network selection.
+- Supports both static and dynamic routing mechanisms to optimize for varying hardware and latency constraints.
+
+### 4. **Shape-Aware Mixture of LoRAs (SMoL)**
+- Introduces modular adapters activated based on sub-network shapes to mitigate gradient conflicts during fine-tuning.
+- Enables efficient merging of selected configurations into the model weights at deployment.
+
+---
+
+## Benchmarks and Performance
+
+Weight-shared networks have shown significant improvements in efficiency and scalability. For example:
+
+- **AmoebaLLM:** Outperforms state-of-the-art (SOTA) LLM compression methods in accuracy-efficiency trade-offs.
+- **FLEXTRON:** Achieves dynamic scaling for transformer architectures, enabling both token-specific and hardware-adaptive optimizations.
+- **OFA:** Achieves high ImageNet accuracy while operating efficiently across diverse hardware platforms.
+
+### Example Trade-Off:
+| Subnet Configuration | Accuracy (%) | Latency (s) |
+|-----------------------|--------------|-------------|
+| Full Model           | 85.2         | 1.50        |
+| Reduced Depth/Width  | 82.3         | 0.90        |
+| Optimized Subnet     | 83.5         | 0.95        |
+
+---
+
+## Applications
+
+### Real-World Use Cases:
+- **Edge AI:** Deploying efficient LLMs on resource-constrained devices like NVIDIA Jetson or mobile GPUs.
+- **Dynamic Model Scaling:** Adjusting model size dynamically based on real-time hardware constraints.
+- **Energy-Efficient AI:** Reducing computational overhead for sustainability-focused AI solutions.
+
+---
+
+## Challenges and Future Directions
+
+1. **Gradient Conflicts:** Addressing conflicts during multi-subnetwork fine-tuning.
+2. **Scalability:** Extending weight-shared strategies to future LLM architectures.
+3. **Robustness:** Ensuring reliability across diverse tasks and hardware.
+
+---
+
+## Explore More
+
+- **Codebase:** [AmoebaLLM GitHub Repository](https://github.com/GATECH-EIC/AmoebaLLM)
+- **Related Works:** [Once-for-All Network](https://arxiv.org/abs/1908.09791), [FLEXTRON Paper](https://arxiv.org/abs/2406.10260)
