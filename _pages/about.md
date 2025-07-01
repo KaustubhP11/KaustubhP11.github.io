@@ -1,37 +1,34 @@
 ---
 layout: about
-title: About Me
+title: Home
 permalink: /
-subtitle: Researcher | AI Enthusiast | IIT Bombay Alumnus
+subtitle: 
 
 profile:
   align: right
-  image: Kaustubh_headshot.jpg
+  image: headshot_new.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Mohamed bin Zayed University of Artificial Intelligence</p>
-    <p>Abu Dhabi, UAE</p>
-    <p>Email: kaustubhponkshe@iitb.ac.in</p>
+  more_info: 
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-## About Me
 
-I am Kaustubh Ponkshe, a researcher passionate about democratizing AI through trustworthy, efficient, and scalable machine learning systems. I hold a Bachelor's degree in Electrical Engineering and a Master's degree in Artificial Intelligence from IIT Bombay, where I was awarded the Undergraduate Research Award for one of the best bachelor’s theses. I am currently working as a researcher with [Prof. Praneeth Vepakomma](https://sites.mit.edu/praneeth/), as a part of the [CERT-Lab](https://github.com/CERT-Lab) at MBZUAI.
 
-My research focuses on addressing challenges in fine-tuning, federated learning, and privacy-preserving AI. Some of my notable projects include:
-- [**LoRA-SB**](https://raghavsinghal10.github.io/lora-sb-page/): Achieved up to 90x parameter efficiency while maintaining competitive performance in fine-tuning.
-- [**Power-Learning**](https://kaustubhp11.github.io/power-learn-page//): Developed a privacy-preserving framework for collaborative learning with formal differential privacy guarantees.
-- [**StructFormer**](/projects/4_project/): Proposed a novel structure-aware language model for document comprehension.
+I am a researcher at the [CERT-Lab](https://github.com/CERT-Lab) in **Massachusetts Institute of Technology** and  in **Mohamed bin Zayed University of Artificial Intelligence** , where I work with [Prof. Praneeth Vepakomma](https://praneeth.mit.edu/). My research aims to push the frontier of machine intelligence, and make it democratizable. My current focus is on -
+- Making [adaptation](https://arxiv.org/pdf/2505.14238) of foundation models [efficient](https://arxiv.org/abs/2411.19557)
+- Tackling [memorization](https://arxiv.org/pdf/2502.05159), [safety](https://arxiv.org/abs/2505.14185) and privacy concerns in LLMs
+- Enabling large-scale [distributed](https://arxiv.org/pdf/2502.15436) and [collaborative](https://arxiv.org/pdf/2410.09432) learning
 
-Feel free to explore my [publications](/publications/) and [projects](/projects/).
+In Fall 2025, I will begin my **PhD in Computer Science (EDIC) at EPFL**, Switzerland. 
 
-## Affiliations
-- Researcher at Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi
-- Former Research Intern at MIT Media Lab
-- Former Graduate Student at IIT Bombay
+Previously, I graduated from **IIT Bombay** with a Bachelor's in Electrical Engineering \\
+and a Master's in Artificial Intelligence. At IIT Bombay, I led the **Path Planning and Controls** subdivision for IIT Bombay Racing, building India’s first driverless racecar.
 
-Thank you for visiting my page!
+Outside of research, I love traveling (24 countries and counting!) and enjoy playing tennis.
+
+
+
+Feel free to explore my <a href="{{ site.baseurl }}/publications/">publications</a> or visit the full list on my <a href="https://scholar.google.com/citations?hl=en&user=-aiMYF0AAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>.

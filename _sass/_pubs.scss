@@ -1,0 +1,43 @@
+:root { --accent: var(--accent-color,#0065bd); }
+
+/* container ----------------------------------------------------------- */
+table.pubs {
+  max-width: 800px;      /* keeps it aligned with the text column   */
+  margin: 0 auto;
+  border-collapse: separate;
+}
+
+/* a single row -------------------------------------------------------- */
+table.pubs tr{
+  display: flex;
+  align-items: flex-start;   /* top-align thumbnail and text          */
+  margin-top: 1.25rem;       /* vertical gap                          */
+}
+table.pubs tr:first-child{ margin-top: 0; }
+
+/* thumbnail cell ------------------------------------------------------ */
+table.pubs td:nth-child(1){
+  flex: 0 0 140px;           /* slightly smaller than before          */
+  padding-right: 20px;
+}
+table.pubs td:nth-child(1) img{
+  width: 140px;
+  border-radius: 6px;
+}
+
+/* text cell ----------------------------------------------------------- */
+table.pubs td:nth-child(2){ flex: 1 1 auto; padding: 0; }
+
+/* title ----------------------------------------------------------------*/
+.papertitle{
+  font-size: 1.15rem;        /* dialled down                          */
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--accent);
+  margin: 0;                 /* kill default <p> margin if any        */
+}
+
+/* links + paragraph spacing ------------------------------------------ */
+table.pubs a       { color: var(--accent); text-decoration: none; }
+table.pubs a:hover { text-decoration: underline; }
+table.pubs p       { margin: .4rem 0 0; }  /* tighter abstract space */

@@ -1,11 +1,14 @@
-github_users:
-  - KaustubhP11
+# github_users:
+#   - KaustubhP11
+#   - CERT-Lab
 
 repo_description_lines_max: 2
 
 github_repos:
-  - RaghavSinghal10/lora-sb
-  - RaghavSinghal10/fedex-lora
-  - Kaustubh-iitb/Power-Mechanism-new
-  - KaustubhP11/StructFormer
+  - CERT-Lab/lora-sb
+  - CERT-Lab/fedex-lora
+  - CERT-Lab/abba
+  - CERT-Lab/safety-subspaces
+  - CERT-Lab/fed-sb
+  - CERT-Lab/Power-Mechanism-new
 

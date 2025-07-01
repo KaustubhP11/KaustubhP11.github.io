@@ -1,0 +1,13 @@
+@import "pubs";        // pulls in _sass/_pubs.scss
+
+// Custom styling for about page to increase left spacing
+.post {
+  padding-left: 2rem;  // Add left padding to move content away from left border
+}
+
+// For smaller screens, reduce the padding
+@media (max-width: 768px) {
+  .post {
+    padding-left: 1rem;
+  }
+}
