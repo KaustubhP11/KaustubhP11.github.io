@@ -1,189 +1,189 @@
 {
   "basics": {
     "name": "Kaustubh Ponkshe",
-    "label": "AI Researcher",
-    "email": "kaustubhponkshe@iitb.ac.in",
-    "phone": "+91 7888066398",
-    "url": "https://github.com/KaustubhP11",
-    "summary": "A dedicated researcher specializing in federated learning, privacy-preserving AI, and efficient model fine-tuning, with experience at prestigious institutions including MIT Media Lab and MBZUAI.",
+    "label": "PhD Student in Computer Science, EPFL",
+    "image": "",
+    "email": "kaustubh.ponkshe@epfl.ch",
+    "url": "https://KaustubhP11.github.io",
+    "summary": "PhD student at EPFL (MLO lab, advised by Prof. Martin Jaggi) and contributor to Apertus. I study how language models learn — pretraining and midtraining dynamics, memory and knowledge, and the efficient and reliable adaptation of foundation models.",
     "location": {
-      "address": "Mumbai",
-      "postalCode": "400076",
-      "city": "Mumbai",
-      "countryCode": "IN",
-      "region": "Maharashtra"
+      "city": "Lausanne",
+      "countryCode": "CH",
+      "region": "Switzerland"
     },
     "profiles": [
       {
         "network": "LinkedIn",
         "username": "Kaustubh Ponkshe",
-        "url": "https://www.linkedin.com/in/kaustubhponkshe"
+        "url": "https://www.linkedin.com/in/kaustubh-ponkshe-6213a1195"
       },
       {
         "network": "GitHub",
         "username": "KaustubhP11",
         "url": "https://github.com/KaustubhP11"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "Kaustubh Ponkshe",
+        "url": "https://scholar.google.com/citations?user=-aiMYF0AAAAJ"
       }
     ]
   },
   "education": [
     {
-      "institution": "Indian Institute of Technology Bombay",
+      "institution": "École Polytechnique Fédérale de Lausanne (EPFL)",
+      "location": "Lausanne, Switzerland",
+      "url": "https://www.epfl.ch/",
+      "area": "Computer Science (Machine Learning & Optimization Lab, advised by Prof. Martin Jaggi)",
+      "studyType": "Ph.D. (EDIC)",
+      "startDate": "2025-09-01",
+      "endDate": "Present",
+      "highlights": [
+        "Contributor to Apertus — the largest (70B) fully open and compliant LLM training run to date",
+        "Awarded the EDIC Fellowship"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Technology Bombay (IITB)",
       "location": "Mumbai, India",
       "url": "https://www.iitb.ac.in/",
-      "area": "Electrical Engineering and Artificial Intelligence",
-      "studyType": "Interdisciplinary Dual Degree",
-      "startDate": "2019-08-01",
+      "area": "Electrical Engineering (B.Tech) and Artificial Intelligence / Machine Learning (M.Tech)",
+      "studyType": "Dual Degree (B.Tech + M.Tech)",
+      "startDate": "2019-07-01",
       "endDate": "2024-07-01",
       "score": "9.57/10",
       "highlights": [
-        "Ranked third among the entire batch in the Artificial Intelligence and Data Science Programme",
-        "Completed a minor degree in Computer Science & Engineering",
-        "Secured perfect grade (AA) in every course from Mathematics & Statistics Department"
+        "Graduated among the top 3 of the M.Tech (AI) cohort",
+        "Awarded the Undergraduate Research Award (URA 02) for one of the best bachelor's theses"
       ]
     }
   ],
   "work": [
     {
-      "name": "Mohamed bin Zayed University of Artificial Intelligence",
+      "name": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
       "position": "Researcher",
-      "location": "Abu Dhabi",
+      "location": "Abu Dhabi, UAE",
       "url": "https://mbzuai.ac.ae/",
-      "startDate": "2024-11-01",
-      "endDate": "Present",
-      "summary": "Working on LoRA-SB and FedEx-LoRA projects under Prof. Praneeth Vepakomma",
+      "startDate": "2024-06-01",
+      "endDate": "2025-06-01",
+      "summary": "LLM efficiency, AI safety and security, post-training, and large-scale distributed learning, with Prof. Praneeth Vepakomma (CERT-Lab).",
       "highlights": [
-        "Developed novel initialization strategy for low-rank adaptation",
-        "Achieved 90x parameter reduction while matching performance",
-        "Formulated systematic error residual assignment for federated LoRA"
+        "Made LLM fine-tuning more efficient, reducing parameter requirements by up to 90x without loss of performance",
+        "Designed update schemes for distributed adaptation, cutting communication overhead by up to 230x",
+        "Studied the impact of fine-tuning on safety and alignment, exposing limits of subspace-based defenses"
       ]
     },
     {
-      "name": "MIT Media Lab, Camera Culture Group",
-      "position": "Research Intern",
-      "location": "Boston, MA",
-      "url": "https://www.media.mit.edu/",
-      "startDate": "2023-05-01",
-      "endDate": "2024-05-01",
-      "summary": "Worked on Power-Learning project focusing on differentially private embeddings",
+      "name": "Entrepreneurs First",
+      "position": "Founder in Residence",
+      "location": "London / Remote",
+      "url": "https://www.joinef.com/",
+      "startDate": "2025-06-01",
+      "endDate": "2025-08-01",
+      "summary": "Selected for a curated cohort of founders building globally impactful companies.",
       "highlights": [
-        "Established theoretical conditions for private data distribution",
-        "Achieved 5% improvement over DP-SGD while maintaining privacy guarantees",
-        "Developed joint learning framework for privacy-utility optimization"
+        "Explored protein-language models to accelerate discovery of novel proteins for sustainable food synthesis"
       ]
     },
     {
-      "name": "AWL Inc. Japan",
-      "position": "AI Research Intern",
-      "location": "Japan",
-      "startDate": "2022-05-01",
-      "endDate": "2022-07-01",
-      "summary": "Worked on Core-AI-Engine optimizations",
+      "name": "Adobe Research",
+      "position": "Research Collaborator",
+      "location": "Bengaluru, India",
+      "url": "https://research.adobe.com/",
+      "startDate": "2022-08-01",
+      "endDate": "2023-04-01",
+      "summary": "Structure-aware pre-training for scientific document understanding.",
       "highlights": [
-        "Implemented parallel processing for face detection and classification",
-        "Developed three graph-based optimization algorithms"
+        "Built a structure-aware corpus of 100K arXiv documents and pre-trained a Longformer with global tokens",
+        "Achieved an 18% gain over sparse-local baselines on SciREX information extraction"
       ]
     }
   ],
   "publications": [
     {
-      "name": "Initialization using Update Approximation for Extremely Efficient Low-Rank Fine-tuning",
-      "publisher": "Under Review @ ICML 2025",
-      "authors": ["Kaustubh Ponkshe*", "Raghav Singhal", "Eduard Gorbunov", "Alexey Tumanov", "Samuel Horvath", "Praneeth Vepakomma"],
-      "releaseDate": "2024-11-01"
+      "name": "Apertus: Democratizing Open and Compliant LLMs for Global Language Environments",
+      "publisher": "Project Apertus (Swiss AI Initiative)",
+      "authors": ["Apertus Team", "Kaustubh Ponkshe"],
+      "releaseDate": "2025-09-01",
+      "url": "https://arxiv.org/abs/2509.14233"
     },
     {
-      "name": "Power Learning: Differentially private embeddings for collaborative learning",
-      "publisher": "Trustworthy ML Workshop @ CIKM 2024",
-      "authors": ["Kaustubh Ponkshe", "Praneeth Vepakomma", "Peter Kairouz"],
-      "releaseDate": "2024-04-01"
+      "name": "TokenSwap: A Lightweight Method to Disrupt Memorized Sequences in LLMs",
+      "publisher": "NeurIPS 2025 (Spotlight)",
+      "authors": ["Parjanya Prashant*", "Kaustubh Ponkshe*", "Babak Salimi"],
+      "releaseDate": "2025-02-01",
+      "url": "https://arxiv.org/abs/2502.05159"
     },
     {
-      "name": "FedEx-LoRA: Exact Aggregation for Federated Fine-Tuning of Foundation Models",
-      "publisher": "FITML Workshop @ NeurIPS 2024",
+      "name": "FedEx-LoRA: Exact Aggregation for Federated and Efficient Fine-Tuning of Large Language Models",
+      "publisher": "ACL 2025 (Oral, Main Conference)",
       "authors": ["Raghav Singhal*", "Kaustubh Ponkshe*", "Praneeth Vepakomma"],
-      "releaseDate": "2024-06-01"
+      "releaseDate": "2024-10-01",
+      "url": "https://arxiv.org/abs/2410.09432"
     },
     {
-      "name": "StructFormer: Document Structure-based Masked Attention",
-      "publisher": "Under Review @ TMLR",
-      "authors": ["Kaustubh Ponkshe", "Venkatapathy Subramanian", "Ganesh Ramakrishnan", "Natwar Modani"],
-      "releaseDate": "2024-03-01"
+      "name": "ABBA: Highly Expressive Hadamard Product Adaptation for Large Language Models",
+      "publisher": "ICLR 2026; ES-FoMo @ ICML 2025 (Spotlight)",
+      "authors": ["Kaustubh Ponkshe*", "Raghav Singhal*", "Rohit Vartak*", "Praneeth Vepakomma"],
+      "releaseDate": "2025-05-01",
+      "url": "https://arxiv.org/abs/2505.14238"
+    },
+    {
+      "name": "Safety Subspaces are Not Distinct: A Fine-Tuning Case Study",
+      "publisher": "ICLR 2026; INTERPLAY @ CoLM 2025",
+      "authors": ["Kaustubh Ponkshe*", "Shaan Shah*", "Raghav Singhal*", "Praneeth Vepakomma"],
+      "releaseDate": "2025-05-01",
+      "url": "https://arxiv.org/abs/2505.14185"
+    },
+    {
+      "name": "Fed-SB: A Silver Bullet for Extreme Communication Efficiency and Performance in (Private) Federated LoRA Fine-Tuning",
+      "publisher": "TMLR (J2C Certification — top 10%)",
+      "authors": ["Raghav Singhal*", "Kaustubh Ponkshe*", "Rohit Vartak", "Lav R. Varshney", "Praneeth Vepakomma"],
+      "releaseDate": "2025-02-01",
+      "url": "https://arxiv.org/abs/2502.15436"
+    },
+    {
+      "name": "Initialization Using Update Approximation is a Silver Bullet for Extremely Efficient Low-Rank Fine-Tuning",
+      "publisher": "SCOPE @ ICLR 2025",
+      "authors": ["Kaustubh Ponkshe*", "Raghav Singhal*", "Eduard Gorbunov", "Alexey Tumanov", "Samuel Horvath", "Praneeth Vepakomma"],
+      "releaseDate": "2024-11-01",
+      "url": "https://arxiv.org/abs/2411.19557"
     }
   ],
   "awards": [
     {
+      "title": "EDIC Fellowship",
+      "date": "2025-09-01",
+      "awarder": "EPFL",
+      "summary": "Doctoral fellowship of the EDIC program at EPFL."
+    },
+    {
       "title": "Undergraduate Research Award (URA 02)",
       "date": "2024-05-01",
       "awarder": "IIT Bombay",
-      "summary": "Awarded for one of the best bachelor's thesis in the entire batch"
+      "summary": "Awarded for one of the best bachelor's theses."
     },
     {
-      "title": "Indian National Math Olympiad",
-      "date": "2019-01-01",
+      "title": "JEE Advanced 2019 — All India Rank 846",
+      "date": "2019-06-01",
+      "awarder": "IIT / JEE",
+      "summary": "Among 1.5M+ candidates."
+    },
+    {
+      "title": "Regional Mathematics Olympiad — State Rank 3",
+      "date": "2017-12-01",
       "awarder": "HBCSE",
-      "summary": "Secured State Rank 3"
-    }
-  ],
-  "projects": [
-    {
-      "name": "LoRA-SB",
-      "description": "Novel initialization strategy for efficient low-rank adaptation",
-      "highlights": [
-        "90x parameter reduction while maintaining performance",
-        "Theoretical guarantees for gradient optimization",
-        "Applied to models up to 9B parameters"
-      ],
-      "startDate": "2024-11-01",
-      "endDate": "Present"
-    },
-    {
-      "name": "GUIDEQ",
-      "description": "Framework for guided questioning using LLMs and XAI",
-      "highlights": [
-        "Novel occlusion-based method for keyword identification",
-        "Improved F1-scores through enhanced information collection",
-        "Applied to healthcare and legal domains"
-      ],
-      "startDate": "2023-07-01",
-      "endDate": "2024-07-01"
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "IIT Bombay Racing",
-      "position": "Design Engineer",
-      "startDate": "2022-07-01",
-      "endDate": "2023-05-01",
-      "highlights": [
-        "Designed autonomous controller for FSSIM simulation",
-        "Won Software Intelligence competition by Ather Energy",
-        "Implemented dynamic control systems"
-      ]
-    },
-    {
-      "organization": "Institute Sports Council",
-      "position": "Sports Convener",
-      "startDate": "2020-06-01",
-      "endDate": "2021-05-01",
-      "highlights": [
-        "Organized Blackcat Championship for varsity teams",
-        "Executed Virtual Run with 1500+ participants"
-      ]
+      "summary": "Regional Mathematics Olympiad awardee."
     }
   ],
   "skills": [
     {
-      "name": "Machine Learning",
-      "keywords": ["Federated Learning", "Privacy-Preserving AI", "Model Fine-Tuning", "Deep Learning"]
+      "name": "Research",
+      "keywords": ["LLM Pretraining & Midtraining", "Post-Training & Data Mixtures", "Memorization & Generalization", "Parameter-Efficient Fine-Tuning", "Federated Learning", "AI Safety"]
     },
     {
-      "name": "Programming",
-      "keywords": ["Python", "TensorFlow", "PyTorch", "Simulink"]
-    },
-    {
-      "name": "Mathematics",
-      "keywords": ["Optimization", "Linear Algebra", "Statistics", "Calculus"]
+      "name": "Languages & Libraries",
+      "keywords": ["Python", "PyTorch", "Megatron-LM", "Nanotron", "DeepSpeed", "Transformers", "PEFT", "TRL", "vLLM", "Accelerate"]
     }
   ],
   "languages": [
@@ -198,6 +198,16 @@
     {
       "language": "Marathi",
       "fluency": "Native"
+    },
+    {
+      "language": "French",
+      "fluency": "Basic (learning)"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Outside Research",
+      "keywords": ["Traveling (24 countries and counting)", "Tennis"]
     }
   ]
 }

@@ -11,3 +11,6 @@ assets/libs/
 node_modules/
 vendor
 .idea
+# server-local helpers (not part of the site)
+PUBLIC_URL.txt
+rebuild.sh

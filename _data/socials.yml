@@ -7,7 +7,7 @@
 # bluesky_url: # your bluesky URL
 # dblp_url: # your DBLP profile url
 # discord_id: # your discord id (18-digit unique numerical identifier)
-email: ponkshekaustubh11@gmail.comm # your email address
+email: kaustubh.ponkshe@epfl.ch # your email address
 # facebook_id: # your facebook id
 # flickr_id: # your flickr id
 github_username: KaustubhP11
@@ -20,7 +20,7 @@ github_username: KaustubhP11
 # lastfm_id: # your lastfm id
 # lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 # leetcode_id: # your LeetCode id
-linkedin_username: kaustubh-ponkshe-6213a1195/
+linkedin_username: kaustubh-ponkshe-6213a1195
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 # medium_username: # your Medium username
 # orcid_id: # your ORCID ID
@@ -31,6 +31,8 @@ linkedin_username: kaustubh-ponkshe-6213a1195/
 # research_gate_profile: # your profile on ResearchGate
 # rss_icon: false # set to true to show the RSS icon
 scholar_userid: -aiMYF0AAAAJ # your Google Scholar ID
+x_username: kaustubhp11 # your X handle
+work_url: https://people.epfl.ch/kaustubh.ponkshe # work page URL
 # scopus_id: # your profile on Scopus
 # semanticscholar_id: # your Semantic Scholar ID
 # spotify_id: # your spotify id
@@ -45,7 +47,3 @@ scholar_userid: -aiMYF0AAAAJ # your Google Scholar ID
 # x_username: # your X handle
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
-# custom_social: # can be any name here other than the ones already defined above
-#   logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-#   title: Custom Social
-#   url: https://www.alberteinstein.com/

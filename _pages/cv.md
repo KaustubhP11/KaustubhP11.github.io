@@ -1,18 +1,11 @@
 ---
-layout: none
+layout: cv
 permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: Kaustubh_New_CV_1pg.pdf
-description: Updated January 2025
+cv_pdf: Kaustubh_Ponkshe_CV.pdf
+description: A one-page PDF is available above; the full version follows below.
+toc:
+  sidebar: left
 ---
-
-<script>
-  // Redirect to PDF directly
-  window.location.href = "{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}";
-</script>
-
-<meta http-equiv="refresh" content="0; url={{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}">
-
-<p>If you are not redirected automatically, <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}">click here</a> to view the PDF.</p>

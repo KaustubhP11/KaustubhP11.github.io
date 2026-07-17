@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-12-15 07:59:00-0400
+date: 2025-09-02 09:00:00+0200
 inline: true
 related_posts: false
 ---
 
-**StructFormer** accepted at the AAAI Workshop on Document Intelligence! :sparkles: 
+**Apertus** is out — the largest (70B) fully open and compliant LLM to date. Proud to have contributed! [[paper]](https://arxiv.org/abs/2509.14233) [[models]](https://huggingface.co/collections/swiss-ai/apertus-llm-68b699e65415c231ace3b059)
