@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search From the Start: Search-Native Pretraining for Language Models</title>
+  <meta name="description" content="QueryLM: language models pretrained on documents augmented with inline web-search queries and retrieved evidence.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kaustubhp11.github.io/querylm/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kaustubhp11.github.io/querylm/">
+  <meta property="og:title" content="Search From the Start: Search-Native Pretraining for Language Models">
+  <meta property="og:description" content="QueryLM: language models pretrained on documents augmented with inline web-search queries and retrieved evidence.">
+  <meta property="og:image" content="https://kaustubhp11.github.io/querylm/assets/fig/teaser.png">
+  <meta property="og:image:width" content="1650">
+  <meta property="og:image:height" content="660">
+  <meta property="og:image:alt" content="QueryLM vs a FLOP-matched baseline across model sizes: base QA, QA after Standard SFT, and following counterfactual evidence.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/search-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="container narrow">
+    <h1 class="title">Search From the Start<img class="mark" src="assets/search-mark.svg" alt="">:<br>
+      <span class="subtitle">Search-Native Pretraining for Language Models</span></h1>
+
+    <p class="authors">
+      <span class="author">Kaustubh Ponkshe<sup>1*</sup></span>
+      <span class="author">Gyung Hyun Je<sup>2*</sup></span>
+      <span class="author">Stefan Taga<sup>1</sup></span><br class="desk">
+      <span class="author">Colin Raffel<sup>2</sup></span>
+      <span class="author">Martin Jaggi<sup>1</sup></span>
+    </p>
+    <p class="affils"><span><sup>1</sup>EPFL</span><span><sup>2</sup>University of Toronto</span><span class="eq"><sup>*</sup>Equal contribution</span></p>
+
+    <nav class="links" aria-label="Paper resources">
+      <a class="btn" href="https://arxiv.org/abs/2611.26809">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>arXiv</a>
+      <a class="btn" href="https://arxiv.org/pdf/2611.26809">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>PDF</a>
+      <span class="btn" aria-disabled="true" title="The code repository is not public yet">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Code (coming soon)</span>
+      <a class="btn" href="https://huggingface.co/collections/Kausp11/search-native-pretraining">
+        <img src="assets/hf.svg" alt="" class="hf">Models and Data</a>
+      <a class="btn" href="#bibtex">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4H5v16h2M17 4h2v16h-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>BibTeX</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ TEASER ============================ -->
+<section class="section">
+  <div class="container">
+    <figure class="fig">
+      <div class="fig-card"><a href="assets/fig/teaser.png" class="zoom"><img src="assets/fig/teaser.png" width="1650" height="660"
+        alt="Three line charts over model size 400M, 1.4B and 3.3B, comparing QueryLM with search against a FLOP-matched baseline: base QA accuracy, QA accuracy after Standard SFT, and how often answers follow counterfactual evidence. QueryLM is higher in all three."></a></div>
+      <figcaption><strong>QueryLM is better at searching for and using evidence.</strong>
+        (a) With search, QueryLM outperforms its compute-matched baseline and the largest open-weight base models we compare
+        (SmolLM3-3B, Qwen2.5-3B, evaluated without search), despite their orders of magnitude more pretraining compute.
+        (b) The lead on eight knowledge-intensive QA tasks remains after Standard SFT of both models.
+        (c) After Search SFT, QueryLM more often follows evidence that contradicts established facts.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ SUMMARY ============================ -->
+<section class="section band">
+  <div class="container narrow">
+    <h2>In short</h2>
+    <p class="lead">Language models are usually taught to use search only after pretraining. We instead add search to the
+      pretraining data itself: ordinary documents are annotated with inline web-search queries, each followed by the
+      evidence that a search engine returns, and the model is trained on this text with the usual next-token objective.
+      The resulting models, <strong>QueryLM</strong>, learn when to search, what to search for, and how to continue the
+      document using what came back.</p>
+    <p>Across Wikipedia and DCLM-Edu corpora and 360M to 3.3B parameters, QueryLM does better on knowledge-intensive
+      tasks than FLOP-matched baselines and follows retrieved evidence more readily. The advantage remains after both
+      models receive the same supervised fine-tuning, so the tested post-training does not recover what was learned
+      during pretraining.</p>
+
+    <ul class="glance" aria-label="At a glance">
+      <li><b>360M–3.3B</b><span>parameters, trained from scratch on Wikipedia and DCLM-Edu</span></li>
+      <li><b>100B+</b><span>tokens in the augmented DCLM-Edu corpus</span></li>
+      <li><b>1.4B ≥ 3.3B</b><span>a 1.4B QueryLM beats or matches a FLOP-matched 3.3B baseline on every knowledge-intensive task</span></li>
+      <li><b>~6,700×</b><span>less pretraining compute: 400M QueryLM with search vs. SmolLM3-3B without</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ METHOD ============================ -->
+<section class="section" id="method">
+  <div class="container narrow">
+    <h2>One document, step by step</h2>
+    <p>A small annotator model reads each pretraining document left to right and scores, at every token, how likely a
+      search query belongs there. Where the score is high it writes a query from the text so far. The query is run against
+      a local BM25 index over Sphere (134M web documents), and the most query-relevant sentences are inserted right after
+      it. The original text is kept unchanged.</p>
+
+    <div class="walk" data-view="aug">
+      <div class="walk-head">
+        <div class="seg" role="tablist" aria-label="View of the example document">
+          <button role="tab" data-view="orig" aria-selected="false"><span class="num">1 · </span>Original</button>
+          <button role="tab" data-view="aug" aria-selected="true"><span class="num">2 · </span>With search</button>
+          <button role="tab" data-view="loss" aria-selected="false"><span class="num">3 · </span>What is trained</button>
+        </div>
+      </div>
+
+      <p class="doc">
+        <span class="t">At Racetrack Playa</span><span class="blk"><span class="q"><span class="tag">QUERY</span>Racetrack Playa</span><span class="r"><span class="tag">RESULT</span>A remote dry lakebed in Death Valley, California…</span></span><span class="t">, stones leave trails stretching</span><span class="blk"><span class="q"><span class="tag">QUERY</span>Racetrack Playa stone trail</span><span class="r"><span class="tag">RESULT</span>Sailing stones leave tracks hundreds of meters long…</span></span><span class="t"> over 100 meters, propelled by</span><span class="blk"><span class="q"><span class="tag">QUERY</span>Racetrack Playa stone propelled by</span><span class="r"><span class="tag">RESULT</span>Thin ice sheets pushed by light winds move the stones…</span></span><span class="t"> wind-driven, millimeter-thin ice.</span>
+      </p>
+
+      <p class="walk-note" data-for="orig">An ordinary pretraining document. Nothing about it says “search here”.</p>
+      <p class="walk-note" data-for="aug">Three search blocks are inserted. Each query uses only the text to its left, so it
+        is the same query the model could write at inference time; the result is what the index returned.</p>
+      <p class="walk-note" data-for="loss"><span class="key k-train">trained</span> Document text and queries carry the
+        next-token loss. <span class="key k-mask">masked</span> Retrieved results are read but never predicted, so the model
+        learns to use evidence, not to recite it.</p>
+    </div>
+
+    <p class="small">Example from the paper’s annotation figure (Fig. 3). At inference time the model emits a query on its own,
+      a search engine fills in the result, and generation continues.</p>
+
+  </div>
+  <div class="container">
+    <figure class="fig">
+      <div class="fig-card"><a href="assets/fig/pipeline.png" class="zoom"><img src="assets/fig/pipeline.png" width="2200" height="472" loading="lazy"
+        alt="Pipeline in three panels: a document with an inserted search block; a training sequence where document and query tokens get loss and the search result is masked; inference where the model issues a query to an external knowledge base and answers."></a></div>
+      <figcaption><strong>Pipeline.</strong> (1) Documents are augmented with inline search blocks. (2) Loss is computed on
+        document text and queries; search results are masked. (3) At inference, QueryLM writes its own queries to an external
+        knowledge base.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ RESULTS ============================ -->
+<section class="section band" id="results">
+  <div class="container">
+    <h2 class="center">Results</h2>
+    <p class="center muted">Baselines (“Standard”) are trained on the same documents without search blocks, with pretraining
+      FLOPs matched to QueryLM. QA scores are averages over eight knowledge-intensive tasks.</p>
+
+    <article class="result">
+      <div class="result-text">
+        <h3>Better on knowledge-intensive QA at every scale</h3>
+        <p>On Wikipedia at 360M and DCLM-Edu at 400M, 1.4B and 3.3B, base QueryLM with search outperforms the
+          FLOP-matched baseline that reads the same queries and results.</p>
+        <p>The lead persists after fine-tuning: with a search-heavy SFT mixture the baseline narrows the gap but does not
+          close it, especially at smaller scales, and with a standard chat SFT mixture QueryLM keeps much of its base advantage.</p>
+      </div>
+      <figure class="fig wide">
+        <div class="fig-card"><a href="assets/fig/qa-base-sft.png" class="zoom"><img src="assets/fig/qa-base-sft.png" width="2200" height="468" loading="lazy"
+          alt="Grouped bar charts of average QA accuracy for Standard and QueryLM across corpus and scale: base models, after Search SFT, and after standard SFT. QueryLM bars are higher in every group."></a></div>
+        <figcaption>Average accuracy on eight QA tasks. Left: base models. Middle: after Search SFT. Right: after standard SFT.</figcaption>
+      </figure>
+    </article>
+
+    <article class="result">
+      <div class="result-text">
+        <h3>Answers follow the evidence</h3>
+        <p>We take 1,000 facts stated in DCLM-Edu training documents and supply evidence that either supports the true value
+          or has been edited to support a plausible wrong one. Both kinds of evidence move QueryLM’s preference toward the
+          value they support more strongly than they move the baseline.</p>
+        <p>The same holds for generated answers on the eight QA tasks. Closed-book, QueryLM is weaker; given counterfactual
+          evidence, it more often answers with what the evidence says.</p>
+      </div>
+      <div class="tabs" data-tabs>
+        <div class="seg" role="tablist" aria-label="Context-following figures">
+          <button role="tab" aria-selected="true" data-tab="probe-qa">Judged answers</button>
+          <button role="tab" aria-selected="false" data-tab="probe-margin">Log-prob preference</button>
+        </div>
+        <figure class="fig wide" data-panel="probe-qa">
+          <div class="fig-card"><a href="assets/fig/context-probe-qa.png" class="zoom"><img src="assets/fig/context-probe-qa.png" width="2160" height="660" loading="lazy"
+            alt="Bar charts of LLM-judged accuracy for Standard and QueryLM SFT models at 400M, 1.4B and 3.3B with no evidence, original evidence and counterfactual evidence."></a></div>
+          <figcaption>LLM-judged accuracy of SFT models under no, original and counterfactual evidence (DCLM-Edu).</figcaption>
+        </figure>
+        <figure class="fig wide" data-panel="probe-margin" hidden>
+          <div class="fig-card"><a href="assets/fig/context-probe-margins.png" class="zoom"><img src="assets/fig/context-probe-margins.png" width="2160" height="660" loading="lazy"
+            alt="Bar charts of log-probability preference for the supported value, Standard in grey and QueryLM in blue, at three scales and three evidence settings."></a></div>
+          <figcaption>Preference for facts seen in training, log P(original) − log P(counterfactual). Grey: Standard, blue:
+            QueryLM. The counterfactual axis is reversed, so taller bars mean stronger evidence following.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="result">
+      <div class="result-text">
+        <h3>General ability is broadly preserved</h3>
+        <p>On closed-book language understanding and commonsense benchmarks, base QueryLM is slightly below the baseline and
+          the two are comparable after SFT, with mixed results across tasks. Search pretraining keeps general capability, but
+          its gains on search-based tasks do not carry over to closed-book reasoning.</p>
+      </div>
+      <div class="result-text">
+        <h3>Cheaper augmentation still works</h3>
+        <p>Shorter retrieved results, or keeping only the two most useful search blocks per document, substantially reduce the
+          amount of augmentation and pretraining compute while retaining reasonable search ability. Context length and
+          insertion frequency trade performance for lower training cost.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ MODELS & DATA ============================ -->
+<section class="section" id="models">
+  <div class="container narrow">
+    <h2>Models and data</h2>
+    <p>Every QueryLM checkpoint is released next to its FLOP-matched Standard baseline, together with the search annotator and
+      the augmented corpora, in one Hugging Face <a href="https://huggingface.co/collections/Kausp11/search-native-pretraining">collection</a>.</p>
+    <div class="table-wrap">
+    <table class="hub">
+      <thead><tr><th>Corpus</th><th>Size</th><th>Stage</th><th>QueryLM</th><th>Standard baseline</th></tr></thead>
+      <tbody>
+        <tr><td class="meta" data-label="Corpus">Wikipedia</td><td class="meta" data-label="Size">360M</td><td class="meta" data-label="Stage">Base</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-wiki-360m">querylm-wiki-360m</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-wiki-360m">standard-wiki-360m</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">Wikipedia</td><td class="meta" data-label="Size">360M</td><td class="meta" data-label="Stage">Search SFT</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-wiki-360m-sft-search">querylm-wiki-360m-sft-search</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-wiki-360m-sft-search">standard-wiki-360m-sft-search</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">400M</td><td class="meta" data-label="Stage">Base</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-400m">querylm-dclm-400m</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-400m">standard-dclm-400m</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">400M</td><td class="meta" data-label="Stage">Search SFT</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-400m-sft-search">querylm-dclm-400m-sft-search</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-400m-sft-search">standard-dclm-400m-sft-search</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">1.4B</td><td class="meta" data-label="Stage">Base</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-1.4b">querylm-dclm-1.4b</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-1.4b">standard-dclm-1.4b</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">1.4B</td><td class="meta" data-label="Stage">Search SFT</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-1.4b-sft-search">querylm-dclm-1.4b-sft-search</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-1.4b-sft-search">standard-dclm-1.4b-sft-search</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">3.3B</td><td class="meta" data-label="Stage">Base</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-3.3b">querylm-dclm-3.3b</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-3.3b">standard-dclm-3.3b</a></td></tr>
+        <tr><td class="meta" data-label="Corpus">DCLM-Edu</td><td class="meta" data-label="Size">3.3B</td><td class="meta" data-label="Stage">Search SFT</td><td class="repo" data-label="QueryLM"><a href="https://huggingface.co/Kausp11/querylm-dclm-3.3b-sft-search">querylm-dclm-3.3b-sft-search</a></td><td class="repo" data-label="Standard"><a href="https://huggingface.co/Kausp11/standard-dclm-3.3b-sft-search">standard-dclm-3.3b-sft-search</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3>Annotator and data</h3>
+    <ul class="datasets">
+      <li><a href="https://huggingface.co/Kausp11/querylm-annotator-gemma4-e4b-lora">querylm-annotator-gemma4-e4b-lora</a> · LoRA adapter for Gemma 4 E4B that writes the search queries</li>
+      <li><a href="https://huggingface.co/datasets/Kausp11/querylm-wiki-pretraining-data">querylm-wiki-pretraining-data</a> · Wikipedia with inline search blocks</li>
+      <li><a href="https://huggingface.co/datasets/Kausp11/querylm-dclm-pretraining-data">querylm-dclm-pretraining-data</a> · DCLM-Edu with inline search blocks</li>
+      <li><a href="https://huggingface.co/datasets/Kausp11/querylm-search-sft-data">querylm-search-sft-data</a> · Search SFT conversations (used for all sizes)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ BIBTEX ============================ -->
+<section class="section band" id="bibtex">
+  <div class="container narrow">
+    <h2>BibTeX</h2>
+    <div class="bib">
+      <button class="copy" type="button">Copy</button>
+<pre><code>@article{ponkshe2026searchfromthestart,
+  title   = {Search From the Start: Search-Native Pretraining for Language Models},
+  author  = {Ponkshe, Kaustubh and Je, Gyung Hyun and Taga, Stefan and Raffel, Colin and Jaggi, Martin},
+  journal = {arXiv preprint arXiv:2611.26809},
+  year    = {2026}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container narrow">
+    <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>,
+      which was adopted from the <a href="https://nerfies.github.io">Nerfies</a> project page.
+      It is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
