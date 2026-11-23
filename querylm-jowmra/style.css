@@ -90,7 +90,10 @@ p + p {
   margin-bottom: 20px;
 }
 h2 {
-  font: 400 clamp(32px, 3.8vw, 46px)/1.15 var(--serif);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 3.8vw, 46px);
+  line-height: 1.15;
   letter-spacing: -0.035em;
 }
 h3 {
@@ -166,7 +169,10 @@ sup {
   margin-bottom: 18px;
 }
 .hero h1 {
-  font: 400 clamp(64px, 8.2vw, 106px)/0.99 var(--serif);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(64px, 8.2vw, 106px);
+  line-height: 0.99;
   letter-spacing: -0.065em;
   position: relative;
 }
@@ -1179,5 +1185,15 @@ figcaption {
   *:after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+.mobile-figure-hint {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mobile-figure-hint {
+    display: block;
+    margin-top: 8px;
   }
 }
