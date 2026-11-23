@@ -39,12 +39,12 @@
             <span><sup>1</sup> EPFL</span><span><sup>2</sup> University of Toronto</span><span class="equal">* Equal contribution</span>
           </p>
         </div>
-
         <div class="hero-actions">
+          <a class="button button-secondary" href="https://arxiv.org/pdf/2611.26809">Paper (PDF)</a>
           <a class="button button-primary" href="https://huggingface.co/collections/Kausp11/search-native-pretraining-6aff3a4378cae95488520885"
             ><img alt="" height="23" src="assets/hf.svg" width="23" />Models &amp; data</a
           ><a class="button button-secondary" href="#bibtex">BibTeX</a><a class="button button-secondary" href="#method">How it works</a
-          ><span class="publication-note">Paper &amp; code links forthcoming</span>
+          ><span class="publication-note">Code link forthcoming</span>
         </div>
       </section>
       <section aria-labelledby="premise-title" class="premise">
@@ -53,6 +53,11 @@
             <h2 id="premise-title">Overview</h2>
           </div>
           <div class="premise-copy">
+            <p>
+              Many factual details in a training corpus cannot be inferred from general patterns and must be memorized. This is especially challenging
+              for smaller models. Search offers another way to access that information, using external sources that can change without retraining the
+              model.
+            </p>
             <p>
               Language models are usually taught to use search after pretraining. We instead augment ordinary pretraining documents with inline search
               calls and retrieved evidence. The resulting models, <strong>QueryLM</strong>, learn when to search, what to search for, and how to use
@@ -72,6 +77,11 @@
           <p>
             Queries and evidence are inserted where they help predict the original continuation. Explore what changes in this simplified example from
             the paper.
+          </p>
+          <p>
+            The original document remains the prediction target. The inserted queries demonstrate how to ask for missing information, while the
+            retrieved text supplies context for the continuation. Because each query is written from the preceding text alone, it does not get to look
+            ahead at the answer.
           </p>
         </div>
         <div class="walkthrough" data-view="original">
@@ -140,15 +150,24 @@
         <div class="method-notes">
           <article>
             <h3>Choose when and what to search.</h3>
-            <p>An annotator identifies insertion points and writes each query using only the preceding text.</p>
+            <p>
+              We fine-tune a small annotator on teacher-generated examples. It scores candidate insertion points in a causal pass through each
+              document, then writes queries from the text preceding the selected positions.
+            </p>
           </article>
           <article>
             <h3>Keep useful evidence.</h3>
-            <p>A local BM25 index retrieves web passages. Responses are compressed and filtered for relevance to the continuation.</p>
+            <p>
+              Queries are run against a local BM25 index over Sphere web documents. We select relevant sentences and filter responses by their overlap
+              with the original continuation, using this overlap as a proxy for usefulness.
+            </p>
           </article>
           <article>
             <h3>Learn the call and continuation.</h3>
-            <p>Training supervises document text and queries. Retrieved responses provide context, but are masked from the loss.</p>
+            <p>
+              The next-token objective supervises document text and queries. Retrieved responses remain visible as context but are masked from the
+              loss, so the model is not directly trained to reproduce the search engine’s output.
+            </p>
           </article>
         </div>
         <details class="figure-disclosure">
@@ -162,7 +181,10 @@
                 src="assets/fig/pipeline.png"
                 width="2200"
             /></a>
-            <figcaption>At inference, QueryLM writes a query, receives the search result, and continues generation.</figcaption>
+            <figcaption>
+              During inference, QueryLM generates a query, a search tool returns evidence, and generation continues with that evidence in context. The
+              local index is used to construct the training corpus; the main QA evaluations use live web retrieval through Tavily.
+            </figcaption>
           </figure>
         </details>
       </section>
@@ -217,12 +239,21 @@
                       QueryLM performs better on knowledge-intensive question answering. The advantage remains after both models receive supervised
                       fine-tuning (SFT), including fine-tuning with search.
                     </p>
+                    <p>
+                      The eight tasks include factual questions about names, dates, and entities, as well as multi-hop questions that require
+                      combining information. We compare base models, models given standard supervised fine-tuning, and models given a higher
+                      proportion of search demonstrations during fine-tuning.
+                    </p>
                     <p class="comparison-note">
                       The tested post-training recipes narrow the gap, but do not fully recover the benefit of search during pretraining.
                     </p>
+                    <p>
+                      For the base-model comparison, the Standard baseline receives QueryLM’s queries and retrieved evidence. This tests whether
+                      search pretraining improves how models use the same information. After search fine-tuning, both models generate their own
+                      queries.
+                    </p>
                   </div>
                 </div>
-
                 <figure>
                   <a class="figure-link" href="assets/fig/qa-base-sft.png"
                     ><img
@@ -246,6 +277,11 @@
                     <p>
                       We supply evidence that supports either an original fact or a plausible counterfactual. QueryLM more readily adjusts its
                       predictions to the supplied evidence.
+                    </p>
+                    <p>
+                      The two views below test this in different ways. “Generated answers” measures context following on the QA benchmarks.
+                      “Controlled fact probe” compares the probability of original and alternative values for 1,000 facts from training documents. In
+                      both cases, the evidence is supplied to isolate its effect on the answer.
                     </p>
                     <p class="comparison-note">
                       This measures responsiveness to context. Following counterfactual evidence is not the same as improving factual accuracy.
@@ -296,7 +332,6 @@
               </article>
             </div>
           </div>
-
           <div class="scope-notes">
             <article>
               <h3>A targeted improvement.</h3>
@@ -324,7 +359,11 @@
             ><img alt="" height="23" src="assets/hf.svg" width="23" />Hugging Face collection</a
           >
         </div>
-        <p class="resources-intro">Explore QueryLM and its compute-matched baselines, together with the augmented corpora and search annotator.</p>
+        <p class="resources-intro">
+          The collection includes QueryLM checkpoints, compute-matched Standard baselines, augmented training corpora, and the search annotator. Use
+          base checkpoints to study what is learned during pretraining, or Search SFT checkpoints to examine the models after search-augmented
+          fine-tuning. The filters below keep each QueryLM checkpoint beside its corresponding baseline.
+        </p>
         <div class="resource-list">
           <article>
             <h3>Model checkpoints</h3>
@@ -469,15 +508,18 @@
         <div class="container citation-grid">
           <div>
             <h2 id="citation-title">BibTeX</h2>
-            <p class="citation-note">Provisional BibTeX.<br />The official citation will follow publication.</p>
+            <p class="citation-note">Preprint, November 2026. <a href="https://arxiv.org/abs/2611.26809">arXiv:2611.26809</a>.</p>
           </div>
           <div class="citation">
             <div class="citation-toolbar"><span>BibTeX</span><button class="copy" type="button">Copy citation</button></div>
             <pre tabindex="0"><code>@misc{ponkshe2026searchfromthestart,
-  title  = {Search From the Start: Search-Native Pretraining for Language Models},
-  author = {Ponkshe, Kaustubh and Je, Gyung Hyun and Taga, Stefan and Raffel, Colin and Jaggi, Martin},
-  year   = {2026},
-  note   = {Placeholder entry; to be replaced by the official citation}
+  title         = {Search From the Start: Search-Native Pretraining for Language Models},
+  author        = {Kaustubh Ponkshe and Gyung Hyun Je and Stefan Taga and Colin Raffel and Martin Jaggi},
+  year          = {2026},
+  eprint        = {2611.26809},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2611.26809}
 }</code></pre>
             <span class="copy-status visually-hidden" role="status"></span>
           </div>
