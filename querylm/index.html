@@ -9,11 +9,10 @@
       content="Search-Native Pretraining teaches language models to search and use evidence from the start of training. Explore the method, results, and QueryLM models."
       name="description"
     />
-
     <meta content="light" name="color-scheme" />
     <link href="assets/search-mark.svg" rel="icon" type="image/svg+xml" />
-    <link href="style.css?v=20261123-academic" rel="stylesheet" />
-    <script defer="" src="main.js?v=20261123-academic"></script>
+    <link href="style.css?v=20261123-compact" rel="stylesheet" />
+    <script defer="" src="main.js?v=20261123-compact"></script>
     <link href="https://kaustubhp11.github.io/querylm/" rel="canonical" />
     <meta content="website" property="og:type" />
     <meta content="https://kaustubhp11.github.io/querylm/" property="og:url" />
@@ -89,20 +88,21 @@
       </section>
       <section aria-labelledby="method-title" class="container section" id="method">
         <div class="section-heading">
-          <h2 id="method-title">How search enters pretraining</h2>
+          <h2 id="method-title">Method</h2>
           <p>
-            Queries and evidence are inserted where they help predict the original continuation. Explore what changes in this simplified example from
-            the paper.
-          </p>
-          <p>
-            The original document remains the prediction target. The inserted queries demonstrate how to ask for missing information, while the
-            retrieved text supplies context for the continuation. Because each query is written from the preceding text alone, it does not get to look
-            ahead at the answer.
+            We insert search queries and retrieved evidence into ordinary training documents. Each query uses only the preceding text. The model
+            learns to generate the query and continue the original document, with the retrieved response available as context.
           </p>
         </div>
         <div class="walkthrough" data-view="original">
           <div class="walkthrough-toolbar">
-            <span class="document-label">A passage about Racetrack Playa</span>
+            <label class="document-label" for="example-select"
+              >Example
+              <select id="example-select">
+                <option value="racetrack">Racetrack Playa</option>
+                <option value="bagels">Bagel preparation</option>
+              </select></label
+            >
             <div aria-label="Training document views" class="tablist" role="tablist">
               <button
                 aria-controls="document-panel"
@@ -150,58 +150,57 @@
               <p class="document-text continuation" hidden=""><span class="supervised">wind-driven, millimeter-thin ice.</span></p>
             </div>
             <aside aria-atomic="true" aria-live="polite" class="walkthrough-note">
-              <span class="note-label">Ordinary pretraining</span>
-              <h3>Predict what comes next.</h3>
-              <p>
-                The model sees the document text and learns to predict its continuation. The factual explanation has to come from what it has learned
-                in its weights.
-              </p>
+              <p>Original document: predict the next token from the preceding text.</p>
             </aside>
           </div>
-          <div class="walkthrough-footer">
-            <span class="example-disclaimer">Illustration of the training format, not a live search.</span
-            ><button class="next-step" type="button">Add a search call</button>
-          </div>
         </div>
-        <div class="method-notes">
-          <article>
-            <h3>Choose when and what to search.</h3>
-            <p>
-              We fine-tune a small annotator on teacher-generated examples. It scores candidate insertion points in a causal pass through each
-              document, then writes queries from the text preceding the selected positions.
-            </p>
-          </article>
-          <article>
-            <h3>Keep useful evidence.</h3>
-            <p>
-              Queries are run against a local BM25 index over Sphere web documents. We select relevant sentences and filter responses by their overlap
-              with the original continuation, using this overlap as a proxy for usefulness.
-            </p>
-          </article>
-          <article>
-            <h3>Learn the call and continuation.</h3>
-            <p>
-              The next-token objective supervises document text and queries. Retrieved responses remain visible as context but are masked from the
-              loss, so the model is not directly trained to reproduce the search engine’s output.
-            </p>
-          </article>
-        </div>
+        <p class="example-disclaimer">Simplified excerpts from the paper, not live searches.</p>
+
+        <figure class="pipeline-figure">
+          <a class="figure-link" href="assets/fig/pipeline.png"
+            ><img
+              alt="Three-stage pipeline: insert queries and evidence into documents, train with response tokens masked, then generate queries to an external search tool at inference."
+              height="472"
+              loading="lazy"
+              src="assets/fig/pipeline.png"
+              width="2200"
+          /></a>
+          <figcaption>
+            Documents are augmented with search calls; training supervises text and queries while masking responses. At inference, a search tool
+            returns evidence and generation continues.
+          </figcaption>
+        </figure>
         <details class="figure-disclosure">
-          <summary>View the complete training and inference pipeline</summary>
-          <figure>
-            <a class="figure-link" href="assets/fig/pipeline.png"
-              ><img
-                alt="Three-stage pipeline: insert queries and evidence into documents, train with response tokens masked, then generate queries to an external search tool at inference."
-                height="472"
-                loading="lazy"
-                src="assets/fig/pipeline.png"
-                width="2200"
-            /></a>
-            <figcaption>
-              During inference, QueryLM generates a query, a search tool returns evidence, and generation continues with that evidence in context. The
-              local index is used to construct the training corpus; the main QA evaluations use live web retrieval through Tavily.
-            </figcaption>
-          </figure>
+          <summary>Annotation and training details</summary>
+
+          <p>
+            The original document remains the prediction target. The inserted queries demonstrate how to ask for missing information, while the
+            retrieved text supplies context for the continuation. Because each query is written from the preceding text alone, it does not get to look
+            ahead at the answer.
+          </p>
+          <div class="method-notes">
+            <article>
+              <h3>Choose when and what to search.</h3>
+              <p>
+                We fine-tune a small annotator on teacher-generated examples. It scores candidate insertion points in a causal pass through each
+                document, then writes queries from the text preceding the selected positions.
+              </p>
+            </article>
+            <article>
+              <h3>Keep useful evidence.</h3>
+              <p>
+                Queries are run against a local BM25 index over Sphere web documents. We select relevant sentences and filter responses by their
+                overlap with the original continuation, using this overlap as a proxy for usefulness.
+              </p>
+            </article>
+            <article>
+              <h3>Learn the call and continuation.</h3>
+              <p>
+                The next-token objective supervises document text and queries. Retrieved responses remain visible as context but are masked from the
+                loss, so the model is not directly trained to reproduce the search engine’s output.
+              </p>
+            </article>
+          </div>
         </details>
       </section>
       <section aria-labelledby="results-title" class="results section" id="results">
