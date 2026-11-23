@@ -3,6 +3,7 @@
    Self-contained: system fonts, no CDNs, no analytics. */
 
 :root {
+  color-scheme: light;
   --bg: #ffffff;
   --band: #f6f7f9;
   --fg: #1f2328;
@@ -20,20 +21,6 @@
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111418; --band: #171b21; --fg: #e6e8eb; --muted: #a2a9b3; --line: #2a3038;
-    --accent: #7cacf8; --accent-soft: #1b2a40; --result: #2e2615; --result-line: #9c7a2e;
-    --ok: #81c995; --ok-soft: #17301f; --code-bg: #1b2027; --card: #f7f8fa;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #111418; --band: #171b21; --fg: #e6e8eb; --muted: #a2a9b3; --line: #2a3038;
-  --accent: #7cacf8; --accent-soft: #1b2a40; --result: #2e2615; --result-line: #9c7a2e;
-  --ok: #81c995; --ok-soft: #17301f; --code-bg: #1b2027; --card: #f7f8fa;
-  color-scheme: dark;
-}
-:root[data-theme="light"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -67,12 +54,7 @@ h3 { font-size: 1.12rem; margin: 0 0 8px; }
 .btn:hover { text-decoration: none; background: #000; }
 .btn svg, .btn .hf { width: 18px; height: 18px; }
 .btn[aria-disabled="true"] { opacity: 0.55; cursor: default; }
-:root[data-theme="dark"] .btn { background: #e6e8eb; color: #111418; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { background: #e6e8eb; color: #111418; } }
 
-.theme-toggle { position: fixed; top: 14px; right: 14px; z-index: 5; width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; padding: 9px; }
-.theme-toggle svg { width: 100%; height: 100%; fill: currentColor; }
 
 /* ---------- figures ---------- */
 .fig { margin: 0; }
@@ -94,8 +76,6 @@ h3 { font-size: 1.12rem; margin: 0 0 8px; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; flex-wrap: wrap; justify-content: center; }
 .seg button { border: 0; background: transparent; color: var(--muted); font: 500 0.88rem var(--sans); padding: 6px 14px; border-radius: 999px; cursor: pointer; }
 .seg button[aria-selected="true"] { background: var(--accent); color: #fff; }
-:root[data-theme="dark"] .seg button[aria-selected="true"] { color: #111418; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .seg button[aria-selected="true"] { color: #111418; } }
 
 .doc { font: 1.12rem/2.25 var(--serif); margin: 0; }
 .blk { display: inline; }
@@ -105,8 +85,6 @@ h3 { font-size: 1.12rem; margin: 0 0 8px; }
 .r { background: var(--result); border: 1px solid var(--result-line); }
 .tag { font: 700 0.66rem var(--mono); letter-spacing: 0.04em; margin-right: 6px; color: var(--accent); }
 .r .tag { color: #b06d00; }
-:root[data-theme="dark"] .r .tag { color: #f0c25c; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .r .tag { color: #f0c25c; } }
 .walk[data-view="orig"] .blk { display: none; }
 .walk[data-view="loss"] .t, .walk[data-view="loss"] .q { text-decoration: underline 3px var(--ok); text-underline-offset: 6px; }
 .walk[data-view="loss"] .r { opacity: 0.45; text-decoration: line-through; }
@@ -161,13 +139,6 @@ table.hub { width: 100%; border-collapse: collapse; font-size: 0.94rem; margin: 
 .zoom { display: block; cursor: zoom-in; }
 .fig-hint { display: none; }
 @media (min-width: 561px) { .q { white-space: nowrap; } }
-/* dim white figure backgrounds in dark mode so they do not glare */
-:root[data-theme="dark"] .fig-card { background: #e9ebee; border-color: #e9ebee; }
-:root[data-theme="dark"] .fig-card img { filter: brightness(0.93); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .fig-card { background: #e9ebee; border-color: #e9ebee; }
-  :root:not([data-theme="light"]) .fig-card img { filter: brightness(0.93); }
-}
 @media (max-width: 560px) {
   br.desk { display: none; }
   /* wide multi-panel figures: keep them legible and let them scroll sideways inside the card */
@@ -183,7 +154,6 @@ table.hub { width: 100%; border-collapse: collapse; font-size: 0.94rem; margin: 
 }
 /* grid children must be allowed to shrink, or wide figures stretch the layout viewport on phones */
 .result > *, .tabs, .fig, .fig-card { min-width: 0; }
-.theme-toggle { position: absolute; }
 button { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 560px) {
   .seg .num { display: none; }
@@ -191,10 +161,8 @@ button { -webkit-tap-highlight-color: transparent; }
   .seg { flex-wrap: nowrap; }
 }
 /* placeholder links (Paper, Code): outlined instead of faded, keeps text contrast */
-.btn[aria-disabled="true"], :root[data-theme="dark"] .btn[aria-disabled="true"] {
+.btn[aria-disabled="true"] {
   opacity: 1; background: transparent; color: var(--fg); border: 1px dashed var(--muted); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn[aria-disabled="true"] {
-  background: transparent; color: var(--fg); border: 1px dashed var(--muted); } }
 #models h3 { margin-top: 26px; }
 .hub td:nth-child(3) { color: var(--muted); }
 @media (max-width: 560px) {

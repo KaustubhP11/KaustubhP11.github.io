@@ -1,14 +1,5 @@
-// Minimal behaviour: theme toggle, worked-example views, figure tabs, BibTeX copy. No dependencies.
+// Minimal behaviour: worked-example views, figure tabs, BibTeX copy. No dependencies.
 (function () {
-  var root = document.documentElement;
-
-  document.querySelector('.theme-toggle').addEventListener('click', function () {
-    var dark = root.dataset.theme ? root.dataset.theme === 'dark'
-      : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
-  });
-
   function select(buttons, active) {
     buttons.forEach(function (b) { b.setAttribute('aria-selected', b === active ? 'true' : 'false'); });
   }
