@@ -27,44 +27,42 @@
     return activate;
   }
   const walkthrough = document.querySelector(".walkthrough");
-  const notes = {
-    original: [
-      "Ordinary pretraining",
-      "Predict what comes next.",
-      "The model sees the document text and learns to predict its continuation. The factual explanation has to come from what it has learned in its weights.",
-    ],
-    search: [
-      "Search-augmented document",
-      "Find the missing information.",
-      "A query uses only the preceding text. Retrieved evidence is inserted before the original continuation, giving the model context for its next prediction.",
-    ],
-    training: [
-      "The learning objective",
-      "Learn to search and use evidence.",
-      "Document text and search queries carry the next-token loss. Retrieved responses remain in the context, but their tokens are excluded from the loss.",
-    ],
+  // Illustrative excerpts from the paper's annotation and pipeline figures.
+  const examples = {
+    racetrack: {
+      prefix: "At Racetrack Playa, stones leave trails stretching over 100 meters, propelled by",
+      continuation: "wind-driven, millimeter-thin ice.",
+      query: "Racetrack Playa stone propelled by",
+      evidence: "Thin ice sheets pushed by light winds move the stones…",
+    },
+    bagels: {
+      prefix: "Before hitting a 450°F deck oven, shaped bagels are poached in",
+      continuation: "an alkaline bath, yielding …",
+      query: "Bagel poached in before oven",
+      evidence: "…boil bagels in an alkaline bath, water enriched with barley malt syrup, honey, …",
+    },
   };
-  const views = Object.keys(notes);
-  const activate = wireTabs(walkthrough.querySelector('[role="tablist"]'), (button) => {
+  document.querySelector("#example-select").addEventListener("change", (event) => {
+    const example = examples[event.target.value];
+    walkthrough.querySelector(".document-text .supervised").textContent = example.prefix;
+    walkthrough.querySelector(".original-ending").textContent = " " + example.continuation;
+    walkthrough.querySelector(".continuation .supervised").textContent = example.continuation;
+    walkthrough.querySelector(".query p").textContent = example.query;
+    walkthrough.querySelector(".evidence p").textContent = example.evidence;
+  });
+  const notes = {
+    original: "Original document: predict the next token from the preceding text.",
+    search: "A query retrieves evidence before the original document continues.",
+    training: "Text and queries are supervised. Retrieved responses remain in context, with their loss masked.",
+  };
+  wireTabs(walkthrough.querySelector('[role="tablist"]'), (button) => {
     const view = button.dataset.view;
     walkthrough.dataset.view = view;
     walkthrough.querySelector(".search-insertion").hidden = view === "original";
     walkthrough.querySelector(".continuation").hidden = view === "original";
     walkthrough.querySelector(".original-ending").hidden = view !== "original";
     walkthrough.querySelector('[role="tabpanel"]').setAttribute("aria-labelledby", button.id);
-    const note = walkthrough.querySelector(".walkthrough-note");
-    note.querySelector(".note-label").textContent = notes[view][0];
-    note.querySelector("h3").textContent = notes[view][1];
-    note.querySelector("p").textContent = notes[view][2];
-    walkthrough.querySelector(".next-step").textContent = {
-      original: "Add a search call",
-      search: "See the training signal",
-      training: "Back to the original",
-    }[view];
-  });
-  walkthrough.querySelector(".next-step").addEventListener("click", () => {
-    const next = views[(views.indexOf(walkthrough.dataset.view) + 1) % views.length];
-    activate(walkthrough.querySelector(`[data-view="${next}"]`));
+    walkthrough.querySelector(".walkthrough-note p").textContent = notes[view];
   });
   document.querySelectorAll("[data-tabs]").forEach((group) => {
     wireTabs(group.querySelector('[role="tablist"]'), (button) => {
