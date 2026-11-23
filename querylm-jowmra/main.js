@@ -69,9 +69,34 @@
   document.querySelectorAll("[data-tabs]").forEach((group) => {
     wireTabs(group.querySelector('[role="tablist"]'), (button) => {
       group.querySelectorAll('[role="tabpanel"]').forEach((panel) => {
-        panel.hidden = panel.id !== button.getAttribute("aria-controls");
+        if (panel.closest("[data-tabs]") === group) {
+          panel.hidden = panel.id !== button.getAttribute("aria-controls");
+        }
       });
     });
+  });
+  const filters = {
+    corpus: document.querySelector("#filter-corpus"),
+    size: document.querySelector("#filter-size"),
+    stage: document.querySelector("#filter-stage"),
+  };
+  const rows = [...document.querySelectorAll(".hub tbody tr")];
+  function filterModels() {
+    let count = 0;
+    rows.forEach((row) => {
+      row.hidden = !Object.entries(filters).every(([key, field]) => !field.value || row.dataset[key] === field.value);
+      if (!row.hidden) count++;
+    });
+    document.querySelector(".filter-status").textContent = `Showing ${count} checkpoint ${count === 1 ? "pair" : "pairs"}.`;
+    document.querySelector(".filter-empty").hidden = count !== 0;
+    document.querySelector(".table-scroll").hidden = count === 0;
+  }
+  Object.values(filters).forEach((field) => field.addEventListener("change", filterModels));
+  document.querySelector(".reset-filters").addEventListener("click", () => {
+    Object.values(filters).forEach((field) => {
+      field.value = "";
+    });
+    filterModels();
   });
   const copy = document.querySelector(".copy");
   copy.addEventListener("click", async () => {
