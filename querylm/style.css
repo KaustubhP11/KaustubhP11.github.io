@@ -188,12 +188,6 @@ sup {
   width: 21px;
   height: 21px;
 }
-.publication-note {
-  width: 100%;
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 2px;
-}
 .premise {
   padding: 26px 0 30px;
 }
