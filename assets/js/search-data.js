@@ -78,7 +78,7 @@ ninja.data = [{
         title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("https://twitter.com/kaustubhp11", "_blank");
+          window.open("https://twitter.com/KausP11", "_blank");
         },
       },{
         id: 'social-work',
