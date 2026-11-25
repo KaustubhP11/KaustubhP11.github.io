@@ -146,7 +146,19 @@ sup {
   font-size: 16px;
 }
 .authors sup {
-  margin-left: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 4px;
+}
+.affiliation-logo {
+  display: inline-block;
+  width: auto;
+  height: 0.6rem;
+  vertical-align: middle;
+}
+.affiliation-logo-toronto {
+  height: 0.9rem;
 }
 .affiliations {
   display: flex;
